@@ -30,3 +30,7 @@ a {
 html {
   font-size: min(2vw,12pt);
 }
+
+body {
+  font-size: 12pt;
+}

@@ -12,7 +12,7 @@
     justify-self: center;
     grid-column: 2;
 
-    font-size: 1.5rem;
+    font-size: 22px;
     font-weight: 700;
 }
 
@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 4rem;
 
     grid-column: 3;
     padding: 1rem;
