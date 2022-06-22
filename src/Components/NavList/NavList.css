@@ -10,7 +10,13 @@
     color: var(--color-dark-grayish-blue);
 }
 
+.nav-item {
+    padding: 36px 0;
+}
+
 .nav-item:hover {
-    scale: 102%;
+    /* scale: 102%; */
     transition: all 0.1s;
+
+    box-shadow: 0 -4px 0 var(--color-orange) inset;
 }

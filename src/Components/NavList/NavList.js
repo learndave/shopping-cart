@@ -2,7 +2,6 @@ import React from "react";
 
 import "./NavList.css"
 
-
 const NavList = () => {
     return (
         <ul className="nav-list">

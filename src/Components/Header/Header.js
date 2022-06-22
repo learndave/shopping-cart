@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Header.css";
+import "./Profile.css";
 import NavList from "../NavList/NavList";
 import Cart from "../Cart/Cart";
 import ProfilePic from "../../Assets/images/image-avatar.png";

@@ -7,11 +7,17 @@
 
     border-radius: .6rem;
     position: relative;
-    padding: 0;
+    padding: 20px;
 }
 
-.cart:hover {
-    scale: 105%;
+.cart-header {
+    position: relative;
+}
+
+.cart:hover .cartcount-icon {
+    /* background-color: white; */
+    outline: solid var(--color-orange) 1px;
+    /* color: var(--color-orange); */
 }
 
 .cart-icon {
@@ -36,4 +42,15 @@
 
     color: white; 
     background-color: var(--color-orange);
+}
+
+.checkout-button {
+    border: none;
+    background-color: var(--color-orange);
+
+    color: white;
+    width: 100%;
+
+    padding: 10px;
+    border-radius: 8px;
 }
