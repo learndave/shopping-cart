@@ -1,34 +1,28 @@
 .header {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-
-    background-color: black;
-    color: white;
-
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+
+    border: solid 1cm var(--color-grayish-blue);
+    border-width: 0 0 1px 0;
+    padding: 0;
+    gap: 2rem;
 }
 
 .header>.app-title {
+    flex: 0;
     justify-self: center;
-    grid-column: 2;
 
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
 }
 
-.header>.nav-list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4rem;
-
-    grid-column: 3;
-    padding: 1rem;
-
-    padding-right: 2rem;
+.profile-picture-icon {
+    height: 40px;
+    outline: solid var(--color-orange) 0;
 }
 
-.nav-item:hover {
-    scale: 115%;
-    transition: all 0.1s;
+.profile-picture-icon:hover {
+    outline: solid var(--color-orange) 2px;
+    border-radius: 40px;
 }

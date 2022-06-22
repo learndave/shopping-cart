@@ -1,14 +1,14 @@
 import React from "react";
-import {FaShoppingCart} from "react-icons/fa";
+import {BsCart2} from "react-icons/bs";
 
-import "./CartNavItem.css";
+import "./Cart.css";
 import CartCounter from "./CartCounter";
 
 
 const CartNavItem = () => {
     return (
         <div className="cart">
-            <FaShoppingCart className="cart-icon"/>
+            <BsCart2 className="cart-icon"/>
             <CartCounter/>
         </div>
     );

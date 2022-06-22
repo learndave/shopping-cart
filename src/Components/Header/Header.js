@@ -1,26 +1,21 @@
 import React from "react";
 
 import "./Header.css";
-import CartNavItem from "./CartNavItem/CartNavItem";
+import NavList from "../NavList/NavList";
+import Cart from "../Cart/Cart";
+import ProfilePic from "../../Assets/images/image-avatar.png";
 
 const Header = () => {
     return (
         <div className="header">
             <a href="/" className="app-title header-logo">
-                Cabs Shopping Mall
+                cabshoppee
             </a>
-            <ul className="nav-list">
-                <li className="product nav-item">
-                    <a href="/products">
-                        Products
-                    </a>
-                </li>
-                <li className="cart nav-item">
-                    <a href="/cart">
-                       <CartNavItem/>
-                    </a>
-                </li>
-            </ul>
+            <NavList/>
+            <Cart/>
+            <a href="/cart" className="header-profile">
+                <img src={ProfilePic} className="profile-picture-icon"/>
+            </a>
         </div>
     );
 };
