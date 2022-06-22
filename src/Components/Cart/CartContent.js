@@ -1,21 +1,38 @@
 import React from "react";
+import { useState } from "react";
+import {BsTrash} from "react-icons/bs";
 
 import "./CartContent.css";
 
 const CartContent = () => {
+    let [cartList, setCartList] = useState([
+        {
+            id: 1,
+            title: "Item 1",
+            cost: 125.00,
+            quantity: 3,
+        },
+        {
+            id: 2,
+            title: "Item 2",
+            cost: 325.00,
+            quantity: 4,
+        },
+    ]);
     return (
         <div className="cart-content-container">
             <h4 className="cart-content-title">Cart</h4>
             <ul className="cart-content-list">
-                <li className="cartItem">
-                    Item 1
-                </li>
-                <li className="cartItem">
-                    2
-                </li>
-                <li className="cartItem">
-                    3
-                </li>
+                {cartList.map(cartItem => {
+                    return (
+                        <li className={`cart-item cart-item-${cartItem.id}`}>
+                            <div className="cart-item-title">{cartItem.title}</div>
+                            <div className="cart-item-cost-quantity">{`$${cartItem.cost} × ${cartItem.quantity}`}</div>
+                            <div className="cart-item-total-cost">{`$${cartItem.cost * cartItem.quantity}`}</div>
+                            <BsTrash className="cart-item-delete"/>
+                        </li>
+                    )
+                })}
             </ul>
             <button className="cart-content-checkout-button">Checkout</button>
         </div>

@@ -43,14 +43,3 @@
     color: white; 
     background-color: var(--color-orange);
 }
-
-.checkout-button {
-    border: none;
-    background-color: var(--color-orange);
-
-    color: white;
-    width: 100%;
-
-    padding: 10px;
-    border-radius: 8px;
-}
