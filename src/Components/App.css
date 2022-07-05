@@ -1,5 +1,8 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -28,4 +31,10 @@
 
 .App {
   width: min(1200px,75vw);
+}
+
+.body {
+  /* outline: dashed 1px blue; */
+  padding: 20px;
+  flex: 1;
 }

@@ -8,6 +8,7 @@ import About from './About/About';
 import Checkout from './Checkout/Checkout';
 import Profile from './Profile/Profile';
 import Cart from './Cart/Cart';
+import ErrorPage from './ErrorPage/ErrorPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/checkout" element={<Checkout/>}/>
               <Route path="/cart" element={<Cart/>}/>
               <Route path="/profile" element={<Profile/>}/>
+              <Route path="*" element={<ErrorPage/>}/>
             </Routes>
           </div>
       </div>
