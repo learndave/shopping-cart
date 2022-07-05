@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import {BsTrash} from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 import "./CartContent.css";
 
@@ -34,7 +35,7 @@ const CartContent = () => {
                     )
                 })}
             </ul>
-           <button className="cart-content-checkout-button">Checkout</button>
+            <Link to="/checkout" className="cart-content-checkout-button">Checkout</Link>
         </div>
     );
 };

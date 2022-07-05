@@ -38,16 +38,12 @@
     padding: 15px 0;
 }
 
-.cart-content-checkout-button-container {
-    width: 100%;
-}
-
 
 .cart-content-checkout-button {
     border: none;
 
     border: solid 1px var(--color-orange);
-    width: 100%;
+    width: 88%;
 
     padding: 10px;
     border-radius: 8px;
@@ -57,7 +53,6 @@
 }
 
 .cart-content-checkout-button:hover {
-
     background-color: var(--color-orange);
     color: white;
 }

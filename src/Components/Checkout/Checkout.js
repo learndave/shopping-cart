@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Cart = () => {
+const Checkout = () => {
   return (
     <div>
         <h1>
-            Cart
+            Checkout
         </h1>
     </div>
   )
 }
 
-export default Cart
+export default Checkout

@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Cart = () => {
+const Profile = () => {
   return (
     <div>
         <h1>
-            Cart
+            Profile
         </h1>
     </div>
   )
 }
 
-export default Cart
+export default Profile
