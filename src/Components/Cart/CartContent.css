@@ -127,3 +127,7 @@
 .cart-item-delete:hover {
     color: var(--color-orange);
 }
+
+.cartcount-icon {
+    width: 13px;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 
-const CartCounter = () => {
-    let cartCount = 99;
+const CartCounter = (props) => {
+    let cartCount = props.cartLength;
 
     return (
         <div className="cartcount-icon" style={{display: cartCount > 0 ? "block" : "none"}}>
