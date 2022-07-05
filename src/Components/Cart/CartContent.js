@@ -34,7 +34,7 @@ const CartContent = () => {
                     )
                 })}
             </ul>
-            <button className="cart-content-checkout-button">Checkout</button>
+           <button className="cart-content-checkout-button">Checkout</button>
         </div>
     );
 };

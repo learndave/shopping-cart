@@ -38,22 +38,28 @@
     padding: 15px 0;
 }
 
+.cart-content-checkout-button-container {
+    width: 100%;
+}
+
 
 .cart-content-checkout-button {
     border: none;
-    background-color: var(--color-orange);
 
-    color: white;
+    border: solid 1px var(--color-orange);
     width: 100%;
 
     padding: 10px;
     border-radius: 8px;
+
+    background-color: white;
+    color: var(--color-orange);
 }
 
 .cart-content-checkout-button:hover {
-    border: solid 1px var(--color-orange);
-    background-color: white;
-    color: var(--color-orange);
+
+    background-color: var(--color-orange);
+    color: white;
 }
 
 .cart-content-list {
