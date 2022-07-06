@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import {BsTrash} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import "./CartContent.css";
 
-const CartContent = (props) => {
+const CartContent = () => {
 
-    let cartList = props.cartList;
+    const [cartList,setCartList] = useState(window.localStorage.getItem('cart'));
+
+    console.log(cartList)
     
     if (cartList.length == 0) {
         return (

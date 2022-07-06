@@ -29,7 +29,7 @@ const CartNavItem = () => {
                 <BsCart2 className="cart-icon"/>
                 {cartLength == 0 ? null : <CartCounter cartLength={cartLength}/>}
             </nav>
-            <CartContent cartList={{cartList}}/>
+            <CartContent />
         </Link>
     );
 };

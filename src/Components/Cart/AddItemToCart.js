@@ -22,7 +22,7 @@ const AddItemToCart = (productId) => {
     }
 
     window.localStorage.setItem("cart", JSON.stringify(cartItems));
-    console.log(JSON.parse(window.localStorage.getItem("cart")));
+    // console.log(JSON.parse(window.localStorage.getItem("cart")));
 }
 
 export default AddItemToCart;
