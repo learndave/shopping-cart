@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import {BsCart2} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -8,8 +7,20 @@ import CartCounter from "./CartCounter";
 import CartContent from "./CartContent";
 import CartData from "../Data/CartData";
 
+
+
 const CartNavItem = () => {
-    let [cartList, setCartList] = useState(CartData);
+    window.localStorage.clear();    
+    (()=> {
+        if (!window.localStorage.hasOwnProperty("cart")) {
+            window.localStorage.setItem("cart",JSON.stringify(new Object()))
+        }
+    })();
+
+    let cartList = () => {
+        window.localStorage.getItem("cart");    
+    };
+
     let cartLength = cartList.length; 
     console.log(cartLength)
     return (
