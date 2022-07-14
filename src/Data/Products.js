@@ -1,4 +1,4 @@
-class Products {
+export class Products {
     constructor() {
         this.list = [
             {
@@ -14,13 +14,17 @@ class Products {
                 price: 19023,
             },
         ];
+
+        this.getProductByID = this.getProductByID.bind(this);
+        this.getAllProducts = this.getAllProducts.bind(this);
     }
 
-    getProductByID(id) {
-        return (this.list.filter(
-            element.id == id;
-        ));
+    getAllProducts = () => {
+        return this.list;
+    }
+
+    getProductByID = (id) => {
+        let product = this.list.filter((element) => element.id == id);
+        return product[0];
     }
 };
-
-export default Products;
