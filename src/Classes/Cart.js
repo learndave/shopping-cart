@@ -1,51 +1,36 @@
-export class Cart {
-    constructor() {
-        this.cart = {"b":1};
+export const getCartFromLocalStorage = () => {
+    // window.localStorage.setItem('cart',JSON.stringify({}))
+    return JSON.parse(window.localStorage.getItem('cart'));
+}
 
-        this.addToCart = this.addToCart.bind(this);
-        this.getCartData = this.getCartData.bind(this);
-        this.getCartLength = this.getCartLength.bind(this);
-        this.updateCartLength = this.updateCartLength.bind(this);
-        this.updateCartLength();
+export const updateLocalStorage = (cart) => {
+    // console.log(cart);
+    window.localStorage.setItem('cart',JSON.stringify(cart))
+}
+
+export const getCartLength = (cart) => {
+    let cartLength = 0;
+    if (!(typeof(cart) === "undefined" || Object.keys(cart).length == 0)) {
+        cartLength = Object.values(cart).reduce((prev,curr) => prev + curr);
     }
+    return cartLength;
+}
 
-    updateLocalStorage = () => {
-        window.localStorage.setItem('cart',JSON.stringify(this.cart))
-    }
+export const addToCart = (cart,id) => {
+    if (cart.hasOwnProperty(id)) {
+        cart[id] = cart[id] + 1;
+    } else {
+        cart[id] = 1;
+    };
 
-    updateCartLength = () => {
-        // console.log(this.cart);
-        if (typeof(this.cart) === "undefined" || Object.keys(this.cart).length == 0) {
-            // console.log("cart is empty");
-            this.cartLength = 0;
-        } else {
-            // console.log("cart has value");
-            this.cartLength = Object.values(this.cart).reduce((prev,curr) => prev + curr);
-        }
-    }
+    updateLocalStorage(cart);
 
-    getCartLength = () => {
-        return this.cartLength;
-    }
+    return cart;
+}
 
-    getCartData = () => {
-        this.cart = JSON.parse(window.localStorage.getItem("cart"));
-        return this.cart;
-    }
 
-    addToCart = (id) => {
-        if (this.cart.hasOwnProperty(id)) {
-            this.cart[id] = this.cart[id] + 1;
-        } else {
-            this.cart[id] = 1;
-        };
-
-        this.updateLocalStorage();
-        this.updateCartLength();
-    }
-
-    clearCart = () => {
-        this.cart = {};
-        this.updateLocalStorage();
-    }
-};
+export const clearCart = (cart) => {
+    cart = {};
+    updateLocalStorage(cart);
+    return cart;
+}

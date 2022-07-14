@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Cart } from '../Classes/Cart';
 
-const ProductsPage = (props) => {
+const ProductsPage = ({cart, setCart, products, AddToCart}) => {
 
-  let products = props.products;
   let productsList = products.getAllProducts();
 
-  let Cart = props.cart;
 
   return (
     <div className='body products-page'>
@@ -23,7 +20,7 @@ const ProductsPage = (props) => {
                     <div className={`${item.id} product-item-details`}>{item.details}</div>
                     <div className={`${item.id} product-item-price`}>${item.price}</div>
                   </Link>
-                  <button onClick={() => Cart.addToCart(item.id)} className={`${item.id} product-item-add-to-cart`}>Add to Cart</button>
+                  <button onClick={() => AddToCart(item.id)} className={`${item.id} product-item-add-to-cart`}>Add to Cart</button>
                 </div>
               );
             })}

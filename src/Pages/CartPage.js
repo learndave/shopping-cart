@@ -1,34 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const CartPage = ({cart, products}) => {
+import { clearCart } from '../Classes/Cart';
 
-  let cartList = cart.cart;
-
-  const [refresh, setRefresh] = useState(false);
-
-  useEffect(() => {
-    cartList = cart.cart; 
-  },[refresh])
-
-  const toggleRefresh = () => {
-    if (refresh) {
-      setRefresh(false);
-    } else {
-      setRefresh(true);
-    }
-  }
-
+const CartPage = ({cart, products, AddToCart, ClearCart}) => {
   return (
     <div className='body cart-page'>
         <h1 className='page-title'>
             Cart
         </h1>
         <ul className='cart-list'>
-        {Object.entries(cartList).map((cartItem) => {
+        {Object.entries(cart).map((cartItem) => {
               let id = cartItem[0];
               let numberOfProducts = cartItem[1];
               let item = products.getProductByID(id);
+              if (item != false) {
               return (
                 <div>
                   <Link to={`${item.id}`} className={`${item.id} products-list`}>
@@ -37,11 +23,13 @@ const CartPage = ({cart, products}) => {
                     <div className={`${item.id} product-item-price`}>${item.price}</div>
                     <div className={`${item.id} product-item-price`}>{`${numberOfProducts} items`}</div>
                   </Link>
-                  <button onClick={() => {cart.addToCart(id); toggleRefresh()}} className={`${item.id} product-item-add-to-cart`}>Add to Cart</button>
+                  <button onClick={() => AddToCart(item.id)} className={`${item.id} product-item-add-to-cart`}>Add to Cart</button>
                 </div>
-              );
+              )} else {
+                return (<></>);
+              }
             })}
-          <button className='clear-cart' onClick={() => {cart.clearCart(); toggleRefresh()}}>Clear Cart</button>
+          <button className='clear-cart' onClick={() => ClearCart()}>Clear Cart</button>
         </ul>
     </div>
   )

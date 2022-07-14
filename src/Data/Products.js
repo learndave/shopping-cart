@@ -25,6 +25,10 @@ export class Products {
 
     getProductByID = (id) => {
         let product = this.list.filter((element) => element.id == id);
-        return product[0];
+        if(product.length == 0) {
+            return false;
+        } else {
+            return product[0];
+        }
     }
 };
